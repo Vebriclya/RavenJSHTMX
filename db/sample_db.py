@@ -19,3 +19,42 @@ db = {
         },
     ]
 }
+
+
+def get_posts():
+    global db
+    return db["posts"]
+
+
+def get_post(post_id):
+    global db
+    for post in db["posts"]:
+        if post["id"] == post_id:
+            return post
+    return None
+
+
+def add_post(title, content):
+    global db
+    post = {
+        "id": randint(1000, 9999),
+        "title": title,
+        "content": content,
+    }
+    db["posts"].insert(0, post)
+    return post
+
+
+def set_post(id, title, content):
+    global db
+    for post in db["posts"]:
+        if post["id"] == id:
+            post["title"] = title
+            post["content"] = content
+            return post
+    return None
+
+
+def delete_post(id):
+    global db
+    db["posts"] = [post for post in db["posts"] if post["id"] != id]
