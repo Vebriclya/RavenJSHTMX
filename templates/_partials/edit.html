@@ -1,0 +1,16 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <form class="children-mb-1">
+            <input value="{{ post.title }}"
+                   type="text"
+                   class="form-control fs-4"
+                   name="title">
+            <textarea class="form-control fs-6" rows="6" name="content">{{ post.content }}</textarea>
+            <div class="w-100 d-flex">
+                <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                <button class="btn btn-danger btn-sm ms-1">Cancel</button>
+                <button class="btn btn-warning btn-sm ms-auto">Delete Post</button>
+            </div>
+        </form>
+    </div>
+</div>
