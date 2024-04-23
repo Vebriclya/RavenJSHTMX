@@ -45,7 +45,7 @@ def add_post(title, content):
     return post
 
 
-def set_post(id, title, content):
+def update_post(id, title, content):
     global db
     for post in db["posts"]:
         if post["id"] == id:
