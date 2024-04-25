@@ -31,3 +31,9 @@ def edit_post(post_id):
     # Default GET behaviour
     post = sample_db.get_post(post_id)
     return render_template("_partials/edit.html", post=post)
+
+
+@app.route("/post/<int:post_id>/delete", methods=["DELETE"])
+def delete_post(post_id):
+    sample_db.delete_post(post_id)
+    return ""
